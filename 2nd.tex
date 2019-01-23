@@ -1,0 +1,31 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+\usetikzlibrary{calc}
+
+\title{Практическая работа №2}
+\author{Студент группы 8871 Ковлягин В.В.}
+
+\begin{document}
+\maketitle 
+$\alpha=30^{\circ}$
+$\theta=80^{\circ}$
+    \begin{tikzpicture}
+        \newcommand{\al}{30}
+        \newcommand{\thet}{80}
+        \draw[thin,->,] (0,0) -- (5.5,0) node[below] {$X$};
+        \draw[thin,->,] (0,0) -- ({5.5*cos(\thet)},{5.5*sin(\thet)}) node[left] {$Y$};
+        \draw[red,thin,->,] (0,0) -- ({5.5*cos(\al)},{5.5*sin(\al)}) node[right] {$x$};
+        \draw[thin,->,] (0,0) -- (0,5.5) node [left] {$Y90\circ$};
+        \draw[thin,->,] (0,0) -- ({5.5*cos(\al)},-{5.5*sin(10)}) node[right] {$X90\circ$};
+        \draw[thin,green,dashed,] (0,{5.5*sin(\al)}) -- ({5.5*cos(\al)},{5.5*sin(\al)});
+        \draw[thin,green,dashed,] ({5.5*cos(\al)},{5.5*sin(\al)}) -- ({5.5*cos(\al)},{0});
+        \draw[thin,blue,dashed,] ({5.5*cos(\al)},{5.5*sin(\al)}) -- ({0},{3.5*sin(\thet)});
+        \draw[thin,blue,dashed,] ({5.5*cos(\al)},{5.5*sin(\al)}) -- ({4*cos(10)},-{sin(\thet)});
+        \draw[thin,<->,] (5,0) arc (0:80:5) node[below, left=-150pt]{$\theta$};
+        \draw[thin,<->,] (2,0) arc (0:30:2) node[below=9pt, left=-15pt]{$\alpha$};
+    \end{tikzpicture}
+
+\end{document}
